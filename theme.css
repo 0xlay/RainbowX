@@ -1,0 +1,601 @@
+/*
+
+ ╔═══╗──────╔╗────────╔═╗╔═╗
+ ║╔═╗║──────║║────────╚╗╚╝╔╝
+ ║╚═╝╠══╦╦═╗║╚═╦══╦╗╔╗╔╬╗╔╝
+ ║╔╗╔╣╔╗╠╣╔╗╣╔╗║╔╗║╚╝╚╝╠╝╚╗
+ ║║║╚╣╔╗║║║║║╚╝║╚╝╠╗╔╗╔╝╔╗╚╗
+ ╚╝╚═╩╝╚╩╩╝╚╩══╩══╝╚╝╚╩═╝╚═╝
+
+ This theme was created for IDA Pro 7.3 and high.
+
+ Creator: 0xlay (https://github.com/0xlay)
+
+*/
+
+@importtheme "_base";
+
+QWidget
+{
+    background-color: #21252b;
+    color: #ddd;
+}
+
+QCheckBox
+{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+QTextEdit,
+QPlainTextEdit
+{
+    background-color: #21252b;
+    border: 1px solid #21252b;
+    border-radius: 2px;
+}
+
+
+
+/*----------------------------------------------------------------------------*/
+/* Style for menu: File, Edit, Jump, ... */
+/*----------------------------------------------------------------------------*/
+QMenuBar,
+QMenuBar::item
+{
+    background-color: #21252b;
+    color: #ddd;
+}
+
+QMenuBar::item::selected
+{
+    background-color: #282c34;
+}
+/*----------------------------------------------------------------------------*/
+
+
+
+/*----------------------------------------------------------------------------*/
+/* Style for submenu: File->Save, Windows->Load desktop, ... */
+/*----------------------------------------------------------------------------*/
+QMenu
+{
+    border: 1px solid #282c34;
+}
+
+QMenu::item:disabled
+{
+    color: #666;
+}
+
+QMenu::item:selected
+{
+    background-color: #282c34;
+}
+/*----------------------------------------------------------------------------*/
+
+
+
+/*----------------------------------------------------------------------------*/
+/* Style for Python and IDC edit field */
+/*----------------------------------------------------------------------------*/
+QLineEdit
+{
+    border: 1px solid #646464;
+    min-height: 20px;
+    border-radius: 2px;
+}
+
+QLineEdit:hover,
+QLineEdit:focus
+{
+    border: 1px solid #00aaaa;
+}
+/*----------------------------------------------------------------------------*/
+
+
+
+/*----------------------------------------------------------------------------*/
+/* Color for tabs: IDA View-A, Structures, ... */
+/*----------------------------------------------------------------------------*/
+QTabBar::tab
+{
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #553bd9, stop: 1 #21252b);
+}
+
+QTabBar::tab:selected
+{
+    background-color: #6a53db;
+}
+/*----------------------------------------------------------------------------*/
+
+
+
+/*----------------------------------------------------------------------------*/
+/* Style for tables: Functions, ... */
+/*----------------------------------------------------------------------------*/
+QTableView
+{
+    border: 1px solid #474747;
+    background-color: #21252b;
+}
+
+QHeaderView::section
+{
+    background-color: #21252b;
+    border: none;
+    border-left: 1px solid #666;
+    border-right: 1px solid #333;
+    padding: 3px;
+}
+
+QHeaderView:horizontal::section
+{
+    min-height: 20px;
+}
+
+QHeaderView:vertical::section
+{
+    
+}
+/*----------------------------------------------------------------------------*/
+
+
+
+QTableCornerButton::section
+{
+    background: #222;
+    border: 2px outset #222;
+}
+
+CustomIDAMemo,
+EditContainer
+{
+    /* FIXME */
+    /* font-family: "<TEXT_INPUT_FONT_FAMILY>"; */
+    /* font-size: <TEXT_INPUT_FONT_SIZE>; */
+    /* font-style: <TEXT_INPUT_FONT_STYLE>; */
+    /* font-weight: <TEXT_INPUT_FONT_WEIGHT>; */
+}
+
+IDAView
+{
+    /* FIXME */
+    /* font-family: "<DISASSEMBLY_FONT_FAMILY>"; */
+    /* font-size: <DISASSEMBLY_FONT_SIZE>; */
+    /* font-style: <DISASSEMBLY_FONT_STYLE>; */
+    /* font-weight: <DISASSEMBLY_FONT_WEIGHT>; */
+}
+
+hexview_t
+{
+    /* FIXME */
+    /* font-family: "<HEXVIEW_FONT_FAMILY>"; */
+    /* font-size: <HEXVIEW_FONT_SIZE>; */
+    /* font-style: <HEXVIEW_FONT_STYLE>; */
+    /* font-weight: <HEXVIEW_FONT_WEIGHT>; */
+}
+
+
+
+/*----------------------------------------------------------------------------*/
+/* Style for scrollbar */
+/*----------------------------------------------------------------------------*/
+QScrollBar
+{
+    background-color: #21252b;
+    width: 20px;
+    height: 20px;
+    margin: 0 0 0 0;
+}
+
+QScrollBar::sub-line,
+QScrollBar::add-line
+{
+    width: 0;
+    height: 0;
+}
+
+QScrollBar::add-page,
+QScrollBar::sub-page
+{
+    background: none;
+}
+
+QScrollBar::handle:vertical
+{
+    min-height: 20px;
+}
+
+QScrollBar::handle:horizontal
+{
+    min-width: 20px;
+}
+
+QScrollBar::handle
+{
+    background-color: #553bd9;
+    margin: 3px;
+    border-radius: 7px;
+}
+/*----------------------------------------------------------------------------*/
+
+
+
+/*----------------------------------------------------------------------------*/
+/* Style for item selected in tables */
+/*----------------------------------------------------------------------------*/
+QTreeView::item:selected,
+QListView::item:selected,
+QTableView::item:selected
+{
+    background-color: #282c34;
+    color: #ddd;
+}
+/*----------------------------------------------------------------------------*/
+
+
+
+QToolBar
+{
+    border: none;
+}
+
+QPushButton
+{
+    border: 1px solid #077;
+    text-align: center;
+    min-height: 20px;
+    min-width: 50px;
+    padding: 0 6px 0 6px;
+    border-radius: 2px;
+}
+
+QPushButton:hover,
+QPushButton:default
+{
+    border: 1px solid #0aa;
+}
+
+QPushButton:pressed
+{
+    border: 1px solid #0ee;
+}
+
+TNavBand > QPushButton,
+nav_scroll_button_t,
+RegJumpButton
+{
+    min-height: 0;
+    min-width: 0;
+    padding: 0;
+    border: none;
+}
+
+DockWidgetTitle,
+DockAreaDragTitle
+{
+    border: none;
+}
+
+/*Style for selected Widget*/
+DockWidgetTitle[active="true"]
+{
+    background-color: #282c34;
+}
+
+DockAreaDragTitle
+{
+    background-color: #555;
+}
+
+/* it seems Qt doesn't account for the checkmark icon when calculating the width
+ * of a combobox menu in dark mode on macOS and linux. we should add it to the margins
+ * so that text isn't clipped */
+@ifndef __NT__
+@def combobox_right_margin 20px;
+@else
+@def combobox_right_margin 0px;
+@endif
+
+QComboBox
+{
+    border: 1px solid #474747;
+    border-radius: 2px;
+    color: #ddd;
+    padding: 1px ${combobox_right_margin} 1px 3px;
+}
+
+QComboBox > QLineEdit,
+QComboBox > QLineEdit:hover,
+QComboBox > QLineEdit:focus
+{
+    border: none;
+    min-height: default;
+}
+
+QComboBox:hover,
+QComboBox:focus
+{
+    border: 1px solid #00aaaa;
+}
+
+QComboBox::drop-down
+{
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+
+    border-left-width: 1px;
+    border-left-color: #666;
+    border-left-style: solid;
+}
+
+/* The 'menu' of a QComboBox */
+QComboBox QAbstractItemView
+{
+    border: 1px solid #2a2a2ac4;
+}
+
+/* Style for combo-box: No debugger, ... */
+QComboBox:!editable
+{
+    background-color: #21252b;
+}
+
+QComboBox::down-arrow
+{
+    image: url("$RELPATH/icons/expand.png");
+}
+
+/*----------------------------------------------------------------------------*/
+/* Styles for close, maximize and undock button for dock widgets */
+/*----------------------------------------------------------------------------*/
+IDADockWidget > QWidget > QAbstractButton
+{
+    background-color: #553bd9;
+    border-radius: 3px;
+}
+/*----------------------------------------------------------------------------*/
+
+QRadioButton,
+QLabel,
+QCheckBox
+{
+    background: transparent;
+}
+
+QStatusBar QLabel
+{
+    border: none;
+}
+
+QStatusBar::item
+{
+    border: 1px solid #585858;
+    border-radius: 2px;
+}
+
+EditContainer,
+ChooserContainer,
+QGroupBox,
+QListView,
+QTreeView
+{
+    border: 1px solid #606060;
+    border-radius: 2px;
+}
+
+QGroupBox
+{
+    margin-top: 5px;
+}
+
+QGroupBox::title
+{
+    subcontrol-origin: margin;
+    subcontrol-position: top center;
+}
+
+/*----------------------------------------------------------------------------*/
+/* Remove border from IDC/Python switch button */
+/*----------------------------------------------------------------------------*/
+CLIWidget > QGroupBox > QPushButton,
+CLIWidget > QGroupBox > QPushButton:hover,
+CLIWidget > QGroupBox > QPushButton:focus
+{
+    border: none;
+}
+
+CLIWidget > QGroupBox
+{
+    margin-top: 0;
+}
+/*----------------------------------------------------------------------------*/
+
+QToolTip,
+QTipLabel
+{
+    border: 1px solid #077;
+    border-radius: 2px;
+    background: #111111;
+    color: #ddd;
+    margin: 0;
+    padding: 0;
+}
+
+CustomIDAMemo
+{
+    border: none;
+
+    qproperty-line-fg-default: #626262;
+    qproperty-line-fg-regular-comment: #72828d;
+    qproperty-line-fg-repeatable-comment: #FFB679;
+    qproperty-line-fg-automatic-comment: #A6B151;
+    qproperty-line-fg-insn: #7878FF;
+    qproperty-line-fg-dummy-data-name: white;
+    qproperty-line-fg-regular-data-name: #C2FF57;
+    qproperty-line-fg-demangled-name: #A15EFF;
+    qproperty-line-fg-punctuation: #FF00D1;
+    qproperty-line-fg-charlit-in-insn: #00C83F;
+    qproperty-line-fg-strlit-in-insn: #00ff00;
+    qproperty-line-fg-numlit-in-insn: #88FF00;
+    qproperty-line-fg-void-opnd: #FF8000;
+    qproperty-line-fg-code-xref: #FFC5F3;
+    qproperty-line-fg-data-xref: #88FF00;
+    qproperty-line-fg-code-xref-to-tail: #A15EFF;
+    qproperty-line-fg-data-xref-to-tail: #FFFF7F;
+    qproperty-line-fg-error: #FF0004;
+    qproperty-line-fg-opcode-byte: #C6B033;
+    qproperty-line-fg-extra-line: #D6FF97;
+    qproperty-line-fg-alt-opnd: #ffd3ff;
+    qproperty-line-fg-hidden: #6AFFBA;
+    qproperty-line-fg-libfunc: #ffb0b8;
+    qproperty-line-fg-locvar: #88FF00;
+    qproperty-line-fg-dummy-code-name: #ffd200;
+    qproperty-line-fg-asm-directive: #90B0FF;
+    qproperty-line-fg-macro: #FF257C;
+    qproperty-line-fg-strlit-in-data: #FFEA00;
+    qproperty-line-fg-charlit-in-data: #FFEA00;
+    qproperty-line-fg-numlit-in-data: #4FEE00;
+    qproperty-line-fg-keyword: #F07EFF;
+    qproperty-line-fg-register-name: #FF52FF;
+    qproperty-line-fg-import-name: #FF0FB3;
+    qproperty-line-fg-segment-name: #ffff7f;
+    qproperty-line-fg-dummy-unknown-name: #FF7A6E;
+    qproperty-line-fg-code-name: #9A35FF;
+    qproperty-line-fg-unknown-name: #CFCC85;
+    qproperty-line-fg-collapsed-line: #ffff00;
+    qproperty-line-bg-default: #21252b;
+    qproperty-line-bg-selected: #e1ad32;
+    qproperty-line-pfx-libfunc: #853EFF;
+    qproperty-line-pfx-func: #ffb0b8;
+    qproperty-line-pfx-insn: #B860FF;
+    qproperty-line-pfx-data: #88FF00;
+    qproperty-line-pfx-unexplored: #FFC802;
+    qproperty-line-pfx-extern: #ff55ff;
+    qproperty-line-pfx-current-line: #ffaa00;
+    qproperty-line-pfx-lumina: aqua;
+    qproperty-graph-bg-top: #21252b;
+    qproperty-graph-bg-bottom: #21252b;
+    qproperty-graph-node-title-normal: #282c34;
+    qproperty-graph-node-title-selected: #aa9f98;
+    qproperty-graph-node-title-current: #5e5854;
+    qproperty-graph-node-frame-group: #ffff00;
+    qproperty-graph-node-shadow: #242424;
+    qproperty-graph-node-high1: #003900;
+    qproperty-graph-node-high2: #6d0000;
+    qproperty-graph-node-foreign: #ff0000;
+    qproperty-graph-edge-normal: #0043cb;
+    qproperty-graph-edge-yes: #009100;
+    qproperty-graph-edge-no: #bc0000;
+    qproperty-graph-edge-high: #aaaaff;
+    qproperty-graph-edge-current: #c68e00;
+    qproperty-line-fg-patched-bytes: #804040;
+    qproperty-line-fg-unsaved-changes: #ff8000;
+    qproperty-line-bg-highlight: #600060;
+    qproperty-line-bg-bpt-enabled: #760000;
+    qproperty-line-bg-bpt-disabled: #00ff00;
+    qproperty-line-bg-bpt-unavailable: #ff8000;
+    qproperty-line-bg-bookmark-outline: white;
+}
+
+CustomIDAMemo[debugging="true"]
+{
+    qproperty-line-bg-default: #21252b;
+}
+
+CustomIDAMemo[hints="true"]
+{
+    qproperty-line-bg-default: #21252b;
+}
+
+MainMsgList
+{
+    color: #ddd;
+    background-color: #21252b;
+}
+
+TCpuRegs
+{
+    background-color: #21252b;
+    qproperty-register-defined: white;
+    qproperty-register-changed: #FFFF7F;
+    qproperty-register-edited: #FF7F17;
+    qproperty-register-unavailable: #808080;
+}
+
+TCpuRegs IDALabel
+{
+    color: #ff52ff;
+}
+
+TextArrows
+{
+    qproperty-jump-in-function: #6c4634;
+    qproperty-jump-external-to-function: #00dede;
+    qproperty-jump-under-cursor: #ffaa00;
+    qproperty-jump-target: #008000;
+    qproperty-register-target: #ff8080;
+}
+
+navband_t
+{
+    qproperty-lib-function: #7747C0;
+    qproperty-function: #c5888f;
+    qproperty-code: #6077AA;
+    qproperty-data: #68C400;
+    qproperty-undefined: #BE9201;
+    qproperty-extern: #ff00ff;
+    qproperty-lumina-function: #00C9C9;
+
+    qproperty-hl-lib-function: #A15EFF;
+    qproperty-hl-function: #ffb0b8;
+    qproperty-hl-code: #90B0FF;
+    qproperty-hl-data: #88FF00;
+    qproperty-hl-undefined: #FFC802;
+    qproperty-hl-extern: #fe4cfe;
+    qproperty-hl-lumina-function: aqua;
+
+    qproperty-hl-outline: #FFF566;
+
+    qproperty-error: #ca0000;
+    qproperty-gap: #282c34;
+    qproperty-cursor: white;
+    qproperty-auto-analysis-cursor: #ff8000;
+}
+
+TextEdit
+{
+    qproperty-keyword1-fg: #7171FF;
+    qproperty-keyword2-fg: #C728C7;
+    qproperty-keyword3-fg: #FF4545;
+    qproperty-string-fg: #ffea00;
+    qproperty-comment-fg: #5AC35A;
+    qproperty-preprocessor-fg: #7171FF;
+    qproperty-number-fg: #88ff00;
+}
+
+TextEdit QWidget
+{
+    background-color: transparent;
+}
+
+TextEdit text_edit_margin_widget_t
+{
+    color: lightgrey;
+    qproperty-header-color: gainsboro;
+}
+
+TChooser
+{
+    qproperty-highlight-bg-default: red;
+    qproperty-highlight-bg-selected: pink;
+}
+
+
+TChooser, dirtree_widget_t
+{
+    qproperty-cut-text-color-default : darkgrey;
+    qproperty-cut-text-color-selected : grey;
+}
